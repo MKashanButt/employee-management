@@ -16,6 +16,8 @@
         @yield('content')
     </main>
     @stack('js')
+
+    <script src="//unpkg.com/alpinejs" defer></script>
 </body>
 
 </html>
