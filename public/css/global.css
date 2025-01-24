@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+:root {
+    --personal-font: "Jersey 10", serif;
+    --black: black;
+    --success: #59B259;
+    --danger: #B52023;
+    --progress: #E9A84C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: inherit;
+    list-style: none;
+    text-decoration: none;
+    transition: 0.2s ease all;
+    font-family: "Varela Round", serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+}
+
+a,
+button {
+    all: unset;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    height: 100%;
+}
+
+aside {
+    width: 5%;
+    height: 100%;
+    padding: 10px;
+    background-color: var(--black);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+
+}
+
+aside h1 {
+    font-size: 15px;
+    background-color: white;
+    border-radius: 50px;
+    color: var(--black);
+    padding: 10px;
+}
+
+aside nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+aside nav ul li {
+    cursor: pointer;
+}
+
+aside .icon {
+    width: 45px;
+    padding: 10px;
+    background-color: white;
+    stroke: var(--black);
+    border-radius: 25px;
+    border: 2px solid var(--black);
+}
+
+aside .icon:hover {
+    border: 2px solid white;
+    background-color: transparent;
+    stroke: white;
+}
+
+.icon {
+    width: 25px;
+}
+
+.danger {
+    background-color: var(--danger);
+    color: white;
+}
+
+.progress {
+    background-color: var(--progress);
+    color: white;
+}
