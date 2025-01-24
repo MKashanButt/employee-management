@@ -7,6 +7,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', function () {
         return view('pages.index');
     })->name('dashboard');
+
+    Route::get('/policies', function () {
+        return view('pages.policies');
+    })->name('policies');
 });
 
 Route::middleware('auth')->group(function () {
