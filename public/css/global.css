@@ -109,3 +109,7 @@ aside .icon:hover {
     background-color: var(--progress);
     color: white;
 }
+
+[x-cloak] {
+    display: none !important;
+}
