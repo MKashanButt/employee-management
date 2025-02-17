@@ -47,6 +47,20 @@
     display: flex;
     gap: 10px;
     align-items: end;
+    user-select: none;
+}
+
+.announcements .stage .item .btns {
+    display: flex;
+    gap: 5px;
+}
+
+.announcements .stage .item button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .announcements .stage .item:nth-of-type(even) {
@@ -122,4 +136,120 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.add {
+    display: flex;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--success);
+    border: 2px solid var(--success);
+    border-radius: 30px;
+    padding: 5px 20px;
+    color: white;
+    gap: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.add-policy {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    align-items: baseline;
+    justify-content: end;
+    z-index: 100;
+}
+
+.add-policy .overlay {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--black);
+    opacity: 60%;
+    position: absolute;
+    z-index: -1;
+}
+
+.add-policy .content {
+    width: 30%;
+    height: 100%;
+    padding: 20px;
+    background-color: white;
+}
+
+.add-policy .content>button {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    background-color: var(--black);
+    color: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.add-policy .content form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.add-policy .content form .item {
+    display: flex;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.add-policy .content form .item:nth-of-type(3) {
+    align-items: baseline;
+    height: 70%;
+}
+
+.add-policy .content form .item label {
+    width: 20%;
+}
+
+.add-policy .content form .item input {
+    width: 80%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--black);
+    outline: none;
+}
+
+.add-policy .content form .item .trix-body {
+    width: 80%;
+    height: 100%;
+}
+
+.add-policy .content form>button {
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: 2px solid var(--black);
+    background-color: var(--black);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#trix_toolbar {
+    width: 100%;
+}
+
+.trix-editor {
+    width: 100% !important;
+    height: 90%;
 }

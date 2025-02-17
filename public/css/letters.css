@@ -1,0 +1,178 @@
+.letters {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.letters h1 {
+    font-size: 40px;
+}
+
+.letters .content {
+    display: flex;
+    gap: 10px;
+}
+
+.letters .content .stage {
+    width: calc(100% * (1/3) - 10px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.letters .content .stage h2 {
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--black);
+}
+
+.letters .content .increments {
+    margin: 0 10px;
+    border-right: 2px solid var(--black);
+    border-left: 2px solid var(--black);
+}
+
+.letters .content .warnings,
+.letters .content .employment {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.letters .content .stage .item {
+    position: relative;
+}
+
+.letters .content .stage .employee {
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--black);
+}
+
+.letters .content .stage .item button {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--black);
+    background-color: var(--black);
+    color: white;
+    border-radius: 25px;
+    margin: 10px 0;
+}
+
+.letters .content .stage .item .delete {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 5px;
+    background-color: var(--danger);
+    border-color: var(--danger);
+}
+
+
+.add {
+    display: flex;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--success);
+    border: 2px solid var(--success);
+    border-radius: 30px;
+    padding: 5px 20px;
+    color: white;
+    gap: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.add-letter {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    align-items: baseline;
+    justify-content: end;
+    z-index: 100;
+}
+
+.add-letter .overlay {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--black);
+    opacity: 60%;
+    position: absolute;
+    z-index: -1;
+}
+
+.add-letter .content {
+    width: 30%;
+    height: 100%;
+    padding: 20px;
+    background-color: white;
+}
+
+.add-letter .content>button {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    background-color: var(--black);
+    color: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.add-letter .content form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.add-letter .content form .item {
+    display: flex;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.add-letter .content form .item label {
+    width: 25%;
+}
+
+.add-letter .content form .item input,
+.add-letter .content form .item select {
+    width: 75%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--black);
+    outline: none;
+}
+
+.add-letter .content form .item .trix-body {
+    width: 80%;
+    height: 100%;
+}
+
+.add-letter .content form>button {
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: 2px solid var(--black);
+    background-color: var(--black);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,226 @@
+.leaves {
+    width: 80%;
+    height: 100%;
+    margin: 20px auto;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.leaves h1 {
+    font-size: 40px;
+}
+
+.leaves .stage {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.leaves .heading {
+    margin-top: 10px;
+    background-color: var(--black);
+    border-radius: 25px;
+    color: white;
+    display: flex;
+    text-align: center;
+}
+
+.leaves .heading .sno {
+    width: 10%;
+    padding: 10px;
+    border-right: 1px solid;
+}
+
+.leaves .heading .user,
+.leaves .heading .date,
+.leaves .heading .days,
+.leaves .heading .reason {
+    width: calc(100% * (1/4) - 10%);
+    padding: 10px;
+    border-right: 1px solid;
+}
+
+.leaves .heading .actions {
+    width: calc(100% * (1/4) - 10%);
+    padding: 10px;
+}
+
+.leaves .item {
+    display: flex;
+    text-align: center;
+}
+
+.leaves .item .sno {
+    width: 10%;
+    padding: 10px;
+    border-right: 1px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leaves .item .date {
+    border-right: 1px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leaves .item .days,
+.leaves .item .user,
+.leaves .item .reason {
+    border-right: 1px solid var(--black);
+}
+
+.leaves .item .user,
+.leaves .item .date,
+.leaves .item .days,
+.leaves .item .reason,
+.leaves .item .actions {
+    width: calc(100% * (1/4) - 10%);
+    padding: 10px;
+}
+
+.leaves .item .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.leaves .item .days {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.leaves .item button,
+.reason-btn,
+.user-account {
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: 2px solid inherit;
+}
+
+.reason-btn {
+    background-color: var(--black);
+    color: white;
+}
+
+.user-account {
+    background-color: var(--success);
+}
+
+.add-modal {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-modal .overlay {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--black);
+    opacity: 60%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.add-modal .content {
+    width: 20%;
+    padding: 50px 20px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: self-start;
+    justify-content: start;
+    border-radius: 5px;
+}
+
+.add-modal .content>button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 5px;
+    background-color: var(--black);
+    color: white;
+    border-radius: 25px;
+    border: 2px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-modal .content form {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.add-modal .content form select {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid var(--black);
+    border-radius: 5px;
+}
+
+.add-modal .content form button {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+.reason-modal {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reason-modal .overlay {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--black);
+    opacity: 60%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.reason-modal .content {
+    width: 60%;
+    padding: 50px 20px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: self-start;
+    justify-content: start;
+}
+
+.reason-modal .content>button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 5px;
+    background-color: var(--black);
+    color: white;
+    border-radius: 25px;
+    border: 2px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

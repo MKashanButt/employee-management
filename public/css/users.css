@@ -1,0 +1,84 @@
+.users {
+    width: 80%;
+    height: 100%;
+    margin: 20px auto;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.users h1 {
+    font-size: 40px;
+}
+
+.users .stage {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.users .heading {
+    margin-top: 10px;
+    background-color: var(--black);
+    border-radius: 25px;
+    color: white;
+    display: flex;
+    text-align: center;
+}
+
+.users .heading .sno {
+    width: 10%;
+    padding: 10px;
+    border-right: 1px solid;
+}
+
+.users .heading .user {
+    width: calc(100% * (1/2) - 10%);
+    padding: 10px;
+    border-right: 1px solid;
+}
+
+.users .heading .actions {
+    width: calc(100% * (1/2) - 10%);
+    padding: 10px;
+}
+
+.users .item {
+    display: flex;
+    text-align: center;
+}
+
+.users .item .sno {
+    width: 10%;
+    padding: 10px;
+    border-right: 1px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.users .item .user {
+    width: calc(100% * (1/2) - 10%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--black);
+}
+
+.users .item .actions {
+    width: calc(100% * (1/2) - 10%);
+    padding: 10px;
+}
+
+.users .item .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.users .item button,
+.reason-btn,
+.user-account {
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: 2px solid inherit;
+}

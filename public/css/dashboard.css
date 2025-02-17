@@ -71,8 +71,12 @@
     padding: 10px;
 }
 
-.home .announcements {
+.home .col-2 {
     width: 25%;
+}
+
+.home .announcements {
+    width: 100%;
     margin: 10px;
     padding: 20px;
     border: 2px solid var(--black);
@@ -107,25 +111,91 @@
     border-radius: 15px 15px 15px 0;
 }
 
-.home .col {
+.home .summary {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home .summary .header {
+    display: flex;
+    gap: 10px;
+}
+
+.home .summary .header button {
+    padding: 10px;
+    background-color: var(--black);
+    color: white;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.home .summary .header button span {
+    padding: 5px 10px;
+    background-color: var(--danger);
+    color: white;
+    border-radius: 50px;
+}
+
+.home .summary .content {
+    width: 100%;
+    border: 2px solid var(--black);
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home .summary .content button {
+    padding: 5px 15px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.home .summary .content button span {
+    border-radius: 25px;
+    padding: 5px 10px;
+}
+
+.home .summary .content hr {
+    border: 2px solid var(--black);
+    border-radius: 25px;
+}
+
+.home .summary .content .terminated {
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--danger);
+}
+
+.home .col-3 {
     width: 50%;
     display: flex;
     flex-direction: column;
 }
 
-.home .col .leaves {
+.home .col-3 .leaves {
     height: 50%;
     padding: 20px 10px;
     margin: 10px;
 }
 
-.home .col .leaves .stage {
+.home .col-3 .leaves .stage {
     height: 96%;
     display: flex;
     margin-top: 10px;
 }
 
-.home .col .leaves .stage .accepted {
+.home .col-3 .leaves .stage .accepted {
     width: 80%;
     height: inherit;
     overflow-y: auto;
@@ -137,7 +207,7 @@
     gap: 10px;
 }
 
-.home .col .leaves .stage>button {
+.home .col-3 .leaves .stage>button {
     width: 20%;
     height: 40px;
     display: flex;
@@ -151,13 +221,13 @@
     overflow-y: auto;
 }
 
-.home .col .leaves .stage .accepted .item {
+.home .col-3 .leaves .stage .accepted .item {
     display: flex;
     align-items: end;
     gap: 10px;
 }
 
-.home .col .leaves .stage .accepted .item p {
+.home .col-3 .leaves .stage .accepted .item p {
     width: 80%;
     padding: 10px 20px;
     background-color: var(--black);
@@ -165,7 +235,7 @@
     color: white;
 }
 
-.home .col .leaves .stage .accepted .item button {
+.home .col-3 .leaves .stage .accepted .item button {
     padding: 5px;
     display: flex;
     align-items: center;
@@ -174,17 +244,17 @@
     color: white;
 }
 
-.home .col .leaves .stage .accepted .item .done {
+.home .col-3 .leaves .stage .accepted .item .done {
     background-color: var(--success);
     border: 2px solid var(--success);
 }
 
-.home .col .leaves .stage .accepted .item .rejected {
+.home .col-3 .leaves .stage .accepted .item .rejected {
     background-color: var(--danger);
     border: 2px solid var(--danger);
 }
 
-.home .col .attendance {
+.home .col-3 .attendance {
     margin: 20px;
     margin-top: 0;
     padding: 10px;
@@ -192,13 +262,13 @@
     border: 2px solid var(--black);
 }
 
-.home .col .attendance .stage {
+.home .col-3 .attendance .stage {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.home .col .attendance .heading {
+.home .col-3 .attendance .heading {
     margin-top: 10px;
     background-color: var(--black);
     border-radius: 25px;
@@ -207,41 +277,183 @@
     text-align: center;
 }
 
-.home .col .attendance .heading .day {
+.home .col-3 .attendance .heading .day {
     width: 50%;
     padding: 10px;
     border-right: 1px solid;
 }
 
-.home .col .attendance .heading .checkin {
+.home .col-3 .attendance .heading .checkin {
     width: 50%;
     padding: 10px;
 }
 
-.home .col .attendance .item {
+.home .col-3 .attendance .item {
     display: flex;
     text-align: center;
 }
 
-.home .col .attendance .item .day {
+.home .col-3 .attendance .item .day {
     border-right: 1px solid var(--black);
 }
 
-.home .col .attendance .item .day,
-.home .col .attendance .item .checkin {
+.home .col-3 .attendance .item .day,
+.home .col-3 .attendance .item .checkin {
     width: 50%;
     padding: 10px;
 }
 
-.home .col .attendance .item .checkin {
+.home .col-3 .attendance .item .checkin {
     display: flex;
     gap: 10px;
     align-items: center;
     justify-content: center;
 }
 
-.home .col .attendance .item button {
+.home .col-3 .attendance .item button {
     padding: 5px 10px;
     border-radius: 25px;
     border: 2px solid inherit;
+}
+
+.alert {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.alert .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    opacity: 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.alert .content {
+    border-radius: 15px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border: 2px solid var(--danger);
+}
+
+.alert .content h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: var(--danger);
+}
+
+.alert .content p {
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.leaveapplication {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    align-items: baseline;
+    justify-content: end;
+    z-index: 100;
+}
+
+.leaveapplication .overlay {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--black);
+    opacity: 60%;
+    position: absolute;
+    z-index: -1;
+}
+
+.leaveapplication .content {
+    width: 30%;
+    height: 100%;
+    padding: 20px;
+    background-color: white;
+}
+
+.leaveapplication .content>button {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    background-color: var(--black);
+    color: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.leaveapplication .content form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.leaveapplication .content form .item {
+    display: flex;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.leaveapplication .content form .item:nth-of-type(6) {
+    align-items: baseline;
+    height: 60%;
+}
+
+.leaveapplication .content form .item label {
+    width: 20%;
+}
+
+.leaveapplication .content form .item input,
+.leaveapplication .content form .item select {
+    width: 80%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--black);
+    outline: none;
+}
+
+.leaveapplication .content form .item textarea {
+    width: 80%;
+    height: 100%;
+    resize: none;
+    border-radius: 5px;
+    border: 1px solid var(--black);
+    outline: none;
+    padding: 5px 10px;
+}
+
+.leaveapplication .content form button {
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: 2px solid var(--black);
+    background-color: var(--black);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

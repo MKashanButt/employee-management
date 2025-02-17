@@ -36,6 +36,7 @@ button {
 
 button {
     cursor: pointer;
+    user-select: none;
 }
 
 body {
@@ -58,9 +59,7 @@ aside {
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    position: relative;
     justify-content: space-between;
-
 }
 
 aside h1 {
@@ -96,6 +95,58 @@ aside .icon:hover {
     stroke: white;
 }
 
+aside>button {
+    position: relative;
+}
+
+aside .menu {
+    position: absolute;
+    right: -180px;
+    bottom: 0;
+    background-color: var(--black);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    user-select: none;
+    border: 2px solid white;
+}
+
+aside .menu .icon {
+    width: 35px;
+    padding: 7px;
+}
+
+aside .menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+aside .menu ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+aside .menu ul li button {
+    all: unset;
+}
+
+.breadcrumbs {
+    width: 2%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    gap: 10px;
+    background-color: var(--success);
+    user-select: none;
+}
+
 .icon {
     width: 25px;
 }
@@ -105,8 +156,18 @@ aside .icon:hover {
     color: white;
 }
 
+.primary {
+    background-color: var(--black);
+    color: white;
+}
+
 .progress {
     background-color: var(--progress);
+    color: white;
+}
+
+.success {
+    background-color: var(--success);
     color: white;
 }
 

@@ -1,0 +1,165 @@
+.profile {
+    width: 93%;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.profile .docs {
+    position: fixed;
+    top: 110px;
+    left: 250px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile .docs form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile .docs form .item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.profile .docs form .item input {
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid var(--black);
+    padding: 10px;
+}
+
+.profile .docs form button {
+    background-color: var(--black);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid var(--black);
+    padding: 10px;
+}
+
+.profile .stage {
+    width: 50%;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile .header {
+    padding: 10px;
+}
+
+.profile .header h1 {
+    font-size: 40px;
+}
+
+.profile .main-info {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 15px;
+}
+
+.profile .main-info .info {
+    width: calc(100% - 250px);
+}
+
+.profile .main-info .info h1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+}
+
+.profile .main-info .info h1 span {
+    padding: 5px 10px;
+    background-color: gray;
+    border-radius: 25px;
+    font-size: 20px;
+}
+
+.profile .main-info .info p {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.profile .main-info .info p span {
+    width: 22%;
+    font-weight: bold;
+}
+
+.profile .main-info .info button {
+    padding: 10px;
+    border: 2px solid var(--black);
+    background-color: var(--black);
+    color: white;
+    border-radius: 5px;
+}
+
+.profile .warnings {
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 15px;
+}
+
+.profile .warnings .item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 2px solid var(--black);
+    padding: 20px 0;
+}
+
+.profile .warnings .item button {
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.profile .warnings .total p {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.profile .increments {
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 15px;
+}
+
+.profile .increments .item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 2px solid var(--black);
+    padding: 20px 0;
+}
+
+
+.profile .increments .item button {
+    padding: 5px 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile .increments .total p {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}

@@ -1,0 +1,88 @@
+.attendance {
+    width: 80%;
+    height: 100%;
+    margin: 20px auto;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.attendance h1 {
+    font-size: 40px;
+}
+
+.attendance .stage {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.attendance .heading {
+    margin-top: 10px;
+    background-color: var(--black);
+    border-radius: 25px;
+    color: white;
+    display: flex;
+    text-align: center;
+}
+
+.attendance .heading .sno {
+    width: 10%;
+    padding: 10px;
+    border-right: 1px solid;
+}
+
+.attendance .heading .user,
+.attendance .heading .date,
+.attendance .heading .checkin {
+    width: calc(100% * (1/3) - 10%);
+    padding: 10px;
+    border-right: 1px solid;
+}
+
+.attendance .heading .checkout {
+    width: calc(100% * (1/3) - 10%);
+    padding: 10px;
+}
+
+.attendance .item {
+    display: flex;
+    text-align: center;
+}
+
+.attendance .item .sno {
+    width: 10%;
+    padding: 10px;
+    border-right: 1px solid var(--black);
+}
+
+.attendance .item .date {
+    border-right: 1px solid var(--black);
+}
+
+.attendance .item .checkin,
+.attendance .item .user {
+    border-right: 1px solid var(--black);
+}
+
+.attendance .item .user,
+.attendance .item .date,
+.attendance .item .checkin,
+.attendance .item .checkout {
+    width: calc(100% * (1/3) - 10%);
+    padding: 10px;
+}
+
+.attendance .item .checkin {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.attendance .item button {
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: 2px solid inherit;
+}

@@ -12,7 +12,11 @@
 
 <body>
     <main>
-        <x-sidebar />
+        @if (Auth::user()->role == 'admin')
+            <x-admin-sidebar />
+        @else
+            <x-sidebar />
+        @endif
         @yield('content')
     </main>
     @stack('js')

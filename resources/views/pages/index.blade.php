@@ -4,7 +4,8 @@
 
 @extends('template')
 @section('content')
-    <section class="home">
+    <x-breadcrumbs :page="'Home'" />
+    <section class="home" x-transition>
         <div class="stats">
             <div class="performance">
                 <h3>Performance</h3>
@@ -51,40 +52,65 @@
                 <canvas id="attendance"></canvas>
             </div>
         </div>
-        <div class="announcements">
-            <h3>Announcements</h3>
-            <div class="stage">
-                <div class="item">
-                    <p class="profile">HR</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fuga debitis iste odio amet
-                        architecto autem quas tenetur.</p>
+        <div class="col-2">
+            <div class="announcements">
+                <h3>Announcements</h3>
+                <div class="stage">
+                    <div class="item">
+                        <p class="profile">HR</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fuga debitis iste odio amet
+                            architecto autem quas tenetur.</p>
+                    </div>
+                    <div class="item">
+                        <p class="profile">HR</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fuga debitis iste odio amet
+                            architecto autem quas tenetur.</p>
+                    </div>
+                    <div class="item">
+                        <p class="profile">HR</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fuga debitis iste odio amet
+                            architecto autem quas tenetur.</p>
+                    </div>
+                    <div class="item">
+                        <p class="profile">HR</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fuga debitis iste odio amet
+                            architecto autem quas tenetur.</p>
+                    </div>
+                    <div class="item">
+                        <p class="profile">HR</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fuga debitis iste odio amet
+                            architecto autem quas tenetur.</p>
+                    </div>
                 </div>
-                <div class="item">
-                    <p class="profile">HR</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fuga debitis iste odio amet
-                        architecto autem quas tenetur.</p>
+            </div>
+            <div class="summary" x-data="{ warning: true, increment: false }">
+                <h3>Summary</h3>
+                <div class="header">
+                    <button @click="warning=true;increment=false">Warnings <span>3</span></button>
+                    <button @click="warning=false;increment=true">Increment</button>
                 </div>
-                <div class="item">
-                    <p class="profile">HR</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fuga debitis iste odio amet
-                        architecto autem quas tenetur.</p>
+                <div class="content" x-show="warning" x-cloak>
+                    <button class="danger">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam,
+                        quis?</button>
+                    <button class="danger">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam,
+                        quis?</button>
+                    <button class="danger">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam,
+                        quis?</button>
+                    <hr>
+                    <p class="terminated">Terminated</p>
                 </div>
-                <div class="item">
-                    <p class="profile">HR</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fuga debitis iste odio amet
-                        architecto autem quas tenetur.</p>
-                </div>
-                <div class="item">
-                    <p class="profile">HR</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fuga debitis iste odio amet
-                        architecto autem quas tenetur.</p>
+                <div class="content" x-show="increment" x-cloak>
+                    <button class="success">PKR/17,000 <span class="progress">Jan 2024</span></button>
+                    <button class="success">PKR/25,000 <span class="progress">Jun 2024</span></button>
+                    <button class="success">PKR/40,000 <span class="progress">Dec 2024</span></button>
+                    <button class="success">PKR/100,000 <span class="progress">Jan 2025</span></button>
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="col-3">
             <div class="leaves">
                 <h3>Leaves Status</h3>
-                <div class="stage">
+                <div class="stage" x-data="{ leave: false }">
                     <div class="accepted">
                         <div class="item">
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum alias ad laborum
@@ -127,7 +153,57 @@
                             </button>
                         </div>
                     </div>
-                    <button>Apply For Leave</button>
+                    <button @click="leave=true">Apply For Leave</button>
+                    <div class="leaveapplication" x-show="leave" x-cloak @click.outside="leave=false" x-transition>
+                        <div class="overlay"></div>
+                        <div class="content" @click.outside="leave=false">
+                            <button @click="leave=false">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="icon">
+                                    <path d="M18 6 6 18" />
+                                    <path d="m6 6 12 12" />
+                                </svg>
+                            </button>
+                            <form action="/leaves/store" method="POST">
+                                @csrf
+                                <h2>Leave Application</h2>
+                                <div class="item">
+                                    <label for="name">Name</label>
+                                    <input type="text" name="name" id="name"
+                                        value="{{ ucwords(Auth::user()->name) }}" readonly>
+                                </div>
+                                <div class="item">
+                                    <label for="email">Email</label>
+                                    <input type="text" name="email" id="email"
+                                        value="{{ strtolower(Auth::user()->email) }}" readonly>
+                                </div>
+                                <div class="item">
+                                    <label for="designation">Designation</label>
+                                    <input type="text" name="designation" id="designation"
+                                        value="{{ ucwords(Auth::user()->designation) }}" readonly>
+                                </div>
+                                <div class="item">
+                                    <label for="starting_date">Starting Date</label>
+                                    <input type="date" name="starting_date" id="starting_date">
+                                </div>
+                                <div class="item">
+                                    <label for="days">Days</label>
+                                    <select name="days" id="days">
+                                        <option value="" selected disabled>Select Days</option>
+                                        @for ($i = 1; $i <= 10; $i++)
+                                            <option value="{{ $i }}">{{ $i }}</option>
+                                        @endfor
+                                    </select>
+                                </div>
+                                <div class="item">
+                                    <label for="reason">Reason</label>
+                                    <textarea type="text" name="reason" id="reason"></textarea>
+                                </div>
+                                <button>Apply</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="attendance">
@@ -201,6 +277,15 @@
             </div>
         </div>
     </section>
+    {{-- @if (Auth::check() && Auth::user()->name == 'Urim')
+        <div class="alert" x-transition>
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>You Have Been Terminated</h1>
+                <p>Please Contact The HR</p>
+            </div>
+        </div>
+    @endif --}}
 @endsection
 
 @push('js')
